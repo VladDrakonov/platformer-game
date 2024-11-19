@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://53r1xwjval8l"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/parameter.gd" id="1_2nhn8"]
+[ext_resource type="AudioStream" uid="uid://b1uq8u48gds81" path="res://sound/[Musique Libre de Droits] - Ambient_Chill_eIhUq-r_rJE.mp3" id="2_mggsx"]
+
+[sub_resource type="Animation" id="Animation_kwnc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_48h2n"]
+resource_name = "Transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxonv"]
+_data = {
+"RESET": SubResource("Animation_kwnc4"),
+"Transition": SubResource("Animation_48h2n")
+}
+
+[node name="Parameter" type="Node2D"]
+script = ExtResource("1_2nhn8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Backend" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MusicScrollBar" type="HScrollBar" parent="CanvasLayer"]
+offset_left = 85.0
+offset_top = 130.0
+offset_right = 252.0
+offset_bottom = 143.0
+value = 100.0
+
+[node name="MusicScrollLabel" type="Label" parent="CanvasLayer/MusicScrollBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.528
+anchor_top = -6.874
+anchor_right = -0.528
+anchor_bottom = -6.874
+offset_left = 88.176
+offset_top = 66.362
+offset_right = 255.176
+offset_bottom = 89.362
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.5
+offset_top = -79.0
+offset_right = 66.5
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "RETURN"
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_right = 186.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "PARAMETER"
+horizontal_alignment = 1
+
+[node name="Separator" type="ColorRect" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 553.0
+offset_right = 1150.0
+offset_bottom = 554.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_dxonv")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("2_mggsx")
+
+[connection signal="scrolling" from="CanvasLayer/MusicScrollBar" to="." method="_on_music_scroll_bar_scrolling"]
+[connection signal="pressed" from="CanvasLayer/ReturnButton" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

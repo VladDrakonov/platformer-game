@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bsayco5dyosaw"]
+
+[ext_resource type="Script" path="res://Scripts/Level System/CreatureMoveOnly.gd" id="1_4tpd1"]
+[ext_resource type="Texture2D" uid="uid://crd7ej3x0cuw8" path="res://asset/Character/Orc/Orc/Orc-Walk.png" id="2_bbyxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgrm8"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(0, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bavx"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(100, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7avg"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(200, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f30l"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(300, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deeg2"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(400, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxivw"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(500, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae31s"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(600, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky53e"]
+atlas = ExtResource("2_bbyxg")
+region = Rect2(700, 33, 100, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgbgb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgrm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bavx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7avg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f30l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deeg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxivw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae31s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky53e")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5ubm"]
+radius = 3.0
+height = 8.0
+
+[node name="CreatureMoveOnly" type="Node2D"]
+script = ExtResource("1_4tpd1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fgbgb")
+animation = &"Walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_w5ubm")

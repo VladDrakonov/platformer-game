@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://lkwf5vgy8t3a"]
+
+[ext_resource type="Script" path="res://Scripts/Player/dead_layer_Input.gd" id="1_8cp0w"]
+[ext_resource type="Texture2D" uid="uid://dbnhoyv70i6tw" path="res://asset/Character/Orc/Orc/Orc-Death.png" id="2_dfa3q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tf6a"]
+atlas = ExtResource("2_dfa3q")
+region = Rect2(0, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aoqx"]
+atlas = ExtResource("2_dfa3q")
+region = Rect2(100, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf5wg"]
+atlas = ExtResource("2_dfa3q")
+region = Rect2(200, 33, 100, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbchw"]
+atlas = ExtResource("2_dfa3q")
+region = Rect2(300, 33, 100, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64rkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tf6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aoqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf5wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbchw")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 4.0
+}]
+
+[node name="dead_layer" type="CanvasLayer"]
+script = ExtResource("1_8cp0w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="deadLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 46.0
+offset_right = 180.0
+offset_bottom = 225.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "YOU DEAD !
+restart ?"
+horizontal_alignment = 1
+
+[node name="restartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -20.0
+offset_right = -125.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Restart"
+
+[node name="quitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 134.0
+offset_top = -20.0
+offset_right = 366.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="menuButton" type="Button" parent="."]
+offset_left = 465.0
+offset_top = 304.0
+offset_right = 697.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 64
+text = "Menu"
+
+[node name="soldat_animated_sprite_2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(571, 511)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_64rkm")
+animation = &"Dead"
+
+[node name="orc_animated_sprite_D2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(571, 511)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_64rkm")
+animation = &"Dead"
+
+[connection signal="pressed" from="restartButton" to="." method="_on_level1_restart_button_pressed"]
+[connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="menuButton" to="." method="_on_menu_button_pressed"]

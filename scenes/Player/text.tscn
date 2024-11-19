@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bknrmqge4dn3o"]
+
+[node name="Text" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 434.0
+offset_top = 95.0
+offset_right = 672.0
+offset_bottom = 404.0
+scale = Vector2(0.53, 0.53)
+theme_override_font_sizes/font_size = 32
+text = "I tried to escape from this 
+maze, but it was so big that I 
+got lost. Between the different 
+paths, traps, etc., I finally 
+succumbed. If you see this 
+sign, just a piece of advice, if 
+you reappear in another place, 
+it means you are at a 
+checkpoint and that it’s the 
+right place. Keep going like 
+this, good luck survivor.
+
+note: i'm a survivor of the 
+hydrakan village, my family
+are here, pls help her"

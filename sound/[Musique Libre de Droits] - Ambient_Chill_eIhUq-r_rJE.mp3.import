@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1uq8u48gds81"
+path="res://.godot/imported/[Musique Libre de Droits] - Ambient_Chill_eIhUq-r_rJE.mp3-e9e9037b8da7a74209ba11d6d114911f.mp3str"
+
+[deps]
+
+source_file="res://sound/[Musique Libre de Droits] - Ambient_Chill_eIhUq-r_rJE.mp3"
+dest_files=["res://.godot/imported/[Musique Libre de Droits] - Ambient_Chill_eIhUq-r_rJE.mp3-e9e9037b8da7a74209ba11d6d114911f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

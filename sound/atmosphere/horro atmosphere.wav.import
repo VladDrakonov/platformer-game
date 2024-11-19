@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dciawh5sjf0p5"
+path="res://.godot/imported/horro atmosphere.wav-f51bec3135ab56ab3beda2be08e77fb2.sample"
+
+[deps]
+
+source_file="res://sound/atmosphere/horro atmosphere.wav"
+dest_files=["res://.godot/imported/horro atmosphere.wav-f51bec3135ab56ab3beda2be08e77fb2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

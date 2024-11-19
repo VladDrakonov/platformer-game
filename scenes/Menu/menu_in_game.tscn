@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://je6n6djbnn42"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/MenuInGame.gd" id="1_858y4"]
+
+[node name="MenuInGame" type="Node2D"]
+script = ExtResource("1_858y4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.235294)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -498.0
+offset_top = 38.0
+offset_right = 832.0
+offset_bottom = 217.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 64
+text = "are you sure to want to quit ?
+the level you play actually will not be save !"
+horizontal_alignment = 1
+
+[node name="YesButton" type="Button" parent="CanvasLayer"]
+offset_left = 770.0
+offset_top = 350.0
+offset_right = 880.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 64
+text = "yes"
+
+[node name="NoButton" type="Button" parent="CanvasLayer"]
+offset_left = 257.0
+offset_top = 350.0
+offset_right = 367.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 64
+text = "no"
+
+[connection signal="pressed" from="CanvasLayer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/NoButton" to="." method="_on_no_button_pressed"]
