@@ -10,14 +10,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	if GlobalSystem.Solder == true:
-		$solder_animated_sprite_2D.show()
-		$orc_animated_sprite_D2.hide()
+		$solder_animated_sprite2D.show()
+		$orc_animated_spriteD2.hide()
 	if GlobalSystem.Orc == true:
-		$orc_animated_sprite_D2.show()
-		$solder_animated_sprite_2D.hide()
+		$orc_animated_spriteD2.show()
+		$solder_animated_sprite2D.hide()
 		
-	$CountDown.start()
-	$NameLabel.text = str(GlobalSystem.PlayerName)
+	$count_down.start()
+	$name.text = str(GlobalSystem.PlayerName)
 	
 func _process(_delta) -> void:
 	$TimerLabel.text = str(countdown)
@@ -26,16 +26,16 @@ func _process(_delta) -> void:
 		$DeadLayer.show()
 		$CountDown.stop()
 		if GlobalSystem.Solder == true:
-			$DeadLayer/solder_animated_sprite_2D.play("Dead")
+			$DeadLayer/solder_animated_sprite2D.play("Dead")
 		elif GlobalSystem.Orc == true:
-			$DeadLayer/orc_animated_sprite_2D.play("Dead")
+			$DeadLayer/orc_animated_sprite2D.play("Dead")
 
 func _physics_process(delta) -> void:
 	if not is_on_floor():
 		if GlobalSystem.Solder == true:
-			$solder_animated_sprite_2D.stop()
+			$solder_animated_sprite2D.stop()
 		elif GlobalSystem.Orc == true:
-			$orc_animated_sprite_D2.stop()
+			$orc_animated_spriteD2.stop()
 			
 		$Timer.start()
 		velocity.y += gravity * delta
@@ -52,16 +52,16 @@ func _physics_process(delta) -> void:
 		
 	if  velocity.x != 0 : #check if the player move
 		if GlobalSystem.Solder == true:
-			$solder_animated_sprite_2D.play("walk")
-			$solder_animated_sprite_2D.flip_h = velocity.x < 0 # return the sprite animator
+			$solder_animated_sprite2D.play("walk")
+			$solder_animated_sprite2D.flip_h = velocity.x < 0 # return the sprite animator
 		elif GlobalSystem.Orc == true:
-			$orc_animated_sprite_D2.play("walk")
-			$orc_animated_sprite_D2.flip_h = velocity.x < 0 # return the sprite animator
+			$orc_animated_spriteD2.play("walk")
+			$orc_animated_spriteD2.flip_h = velocity.x < 0 # return the sprite animator
 	else :
 		if GlobalSystem.Solder == true:
-			$solder_animated_sprite_2D.play("idle")
+			$solder_animated_sprite2D.play("idle")
 		elif GlobalSystem.Orc == true:
-			$orc_animated_sprite_D2.play("idle")
+			$orc_animated_spriteD2.play("idle")
 			
 	move_and_slide()
 

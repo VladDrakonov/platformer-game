@@ -13,7 +13,6 @@ config_version=5
 config/name="Platformer Game"
 config/description="you find yourself trapped after an unexpected earthquake hits, blocking your path in a perilous zone. Now, you must navigate through the chaos, seeking a way to escape and survive. Your goal is to reach an alternate route that promises freedom, all while managing resources and avoiding the dangers that lurk after the disaster. It's a thrilling test of wit and willpower as you fight against the odds to find safety."
 config/version="1.0.0"
-run/main_scene="res://scenes/Menu/menu_game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/image="res://Ico/Start.png"
 
@@ -23,6 +22,7 @@ SystemLevel="*res://Scripts/Global/global_level.gd"
 LocalCoinLevel="*res://Scripts/Global/local coin level.gd"
 CheckpointSys="*res://Scripts/Global/checkpoint_sys.gd"
 GlobalSystem="*res://Scripts/Global/global_system.gd"
+global_success="*res://Scripts/Global/global_success.gd"
 
 [display]
 

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5kasw1ynk8c5"]
+
+[ext_resource type="Texture2D" uid="uid://bjcx4vgnqtnpe" path="res://asset/Character/Soldier/Soldier-Walk.png" id="1_eitdg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqfna"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(40, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iph44"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(140, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l637t"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(240, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3ghm"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(340, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oftk"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(440, 32, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa513"]
+atlas = ExtResource("1_eitdg")
+region = Rect2(540, 32, 20, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_le8bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqfna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iph44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l637t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3ghm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0oftk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa513")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="CharacterMenu" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 0)
+sprite_frames = SubResource("SpriteFrames_le8bv")
+animation = &"Walk"

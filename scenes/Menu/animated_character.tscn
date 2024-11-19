@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcj7mq4rdt0wg"]
+
+[ext_resource type="Texture2D" uid="uid://bjcx4vgnqtnpe" path="res://asset/Character/Soldier/Soldier-Walk.png" id="1_is6r3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi3vx"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(40, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr3n0"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(140, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cudi"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(240, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnddf"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(340, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bt02"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(440, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7bj"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(540, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpw6j"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(640, 33, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkapq"]
+atlas = ExtResource("1_is6r3")
+region = Rect2(740, 33, 20, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycp8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi3vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr3n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cudi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnddf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bt02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7bj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpw6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkapq")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[node name="AnimatedCharacter" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ycp8k")
+animation = &"Walk"
+frame_progress = 0.291084
